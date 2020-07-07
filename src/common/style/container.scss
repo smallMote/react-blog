@@ -1,0 +1,14 @@
+.container {
+  padding-right: 15px;
+  max-width: 1170px;
+  padding-left: 15px;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  &::before, // before是因为table类型能生成独立的bfc，防止上边距塌陷，
+  &::after { // after负责清除浮动，防止父级高度塌陷；配合使用，代码少，效率高。
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}

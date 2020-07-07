@@ -1,0 +1,34 @@
+.btn {
+  min-width: 60px;
+  color: white;
+  background: rgb(77, 64, 51);
+  text-shadow: black 0px -0.1em 0.2em;
+  text-align: center;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  tab-size: 4;
+  hyphens: none;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border: 0.3em solid rgb(122, 102, 82);
+  border-radius: 0.5em;
+  box-shadow: black 1px 1px 0.5em inset;
+  cursor: pointer;
+  outline: none;
+  transition: .4s ease;
+  &:active {
+    box-shadow: $theme-color-dx 1px 1px 0.5em inset;
+  }
+  &:focus {
+    filter: brightness(120%);
+  }
+  &:first-child {
+    margin-right: 6px;
+  }
+}
+.btn ~ .btn {
+  margin-right: 6px;
+}

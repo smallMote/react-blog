@@ -1,7 +1,13 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux'
 import { PrismLight } from 'react-syntax-highlighter'
-import { coy } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { jsx, javascript, haml } from 'react-syntax-highlighter/dist/esm/languages/prism'
+
+function mapStateToProps(state) {
+	return {
+		codeTheme: state.codeTheme
+	}
+}
 
 class CodeBlock extends Component {
 	UNSAFE_componentWillMount() {
@@ -11,12 +17,12 @@ class CodeBlock extends Component {
 		PrismLight.registerLanguage('js ', javascript)
 	}
 	render() {
-		const { language, value } = this.props
+		const { language, value, codeTheme } = this.props
 		return (
 			<figure>
 				<PrismLight
 					language={language}
-					style={coy}
+					style={codeTheme}
 				>
 					{ value }
 				</PrismLight>
@@ -25,4 +31,4 @@ class CodeBlock extends Component {
 	}
 }
 
-export default CodeBlock
+export default connect(mapStateToProps)(CodeBlock)
