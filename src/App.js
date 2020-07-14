@@ -1,6 +1,7 @@
 import React from 'react'
 import Markdown from './components/Markdown'
 import CodeTheme from './components/CodeTheme'
+import Home from './views/Home'
 
 function App() {
 	return (
@@ -9,6 +10,7 @@ function App() {
 				<CodeTheme />
 				<div className='app'>Hello React 2</div>
 				<Markdown />
+				<Home/>
 			</div>
 		</>
 	)
